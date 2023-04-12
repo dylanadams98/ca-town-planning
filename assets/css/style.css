@@ -1,6 +1,6 @@
 :root {
   --dark: #232323;
-  --light: #ecd29a;
+  --light: #d5bf91;
   --mid: #8F5C38;
 }
 
@@ -29,7 +29,7 @@ body {
 
 header h4{
   align-items: center;
-  font-size: 120px;
+  font-size: 100px;
   text-transform: uppercase;
   font-family: 'helvetica', serif;
   letter-spacing: -15.5px;
