@@ -1,8 +1,12 @@
+/* Root styles to ensure easily adjustable and modular site */
+
 :root {
   --dark: #232323;
   --light: #d5bf91;
   --mid: #8F5C38;
 }
+
+/* Ensures all jumpto navigation uses a smooth scroll */
 
 html {
   scroll-behavior: smooth;
@@ -13,6 +17,8 @@ header {
   background: var(--light);
 
 }
+
+/* Blur animation using keyframes included later in CSS */
 
 body {
   font-family: Helvetica;
@@ -25,7 +31,10 @@ body {
   animation-direction: alternate;
   animation-iteration-count: 1;
   background-color: var(--light);
+  user-select: none;
 }
+
+/* Animated header text using eased transition on letter spacing in place of kerning */
 
 header h4{
   align-items: center;
@@ -46,6 +55,8 @@ h4:hover {
   letter-spacing: 5px;
 }
 
+/* Navigation bar that is fixed as a column, and features animated darkened background */
+
 nav {
   display: flex;
   flex-direction: column;
@@ -55,7 +66,7 @@ nav {
 }
 
 nav a:hover{
-  background-color: #121111;
+  background-color: var(--mid);
 }
 
 a {
@@ -100,7 +111,6 @@ footer {
   
 }
 
-/* TODO: Add properties to the cards to achieve the required look */
 .card {
   flex: 0 0 347px;
   filter: drop-shadow(0px 0px 0px);
@@ -113,6 +123,8 @@ footer {
   transition: 340ms ease;
   text-align: center;
 }
+
+/* Project examples with animated grayscale transition and text spacing. Alternatively can have unblur transition (Commented out currently) */
 
 .card:hover {
   letter-spacing: 1px;
@@ -144,18 +156,22 @@ footer {
 
 .card img {
   transition: transform .8s linear;
-  /*transform: scale(1.05); for blur purposes*/
+  /*transform: scale(1.05); for blur purposes to ensure blur is restricted to image with no overwrite*/
 }
 
+/* Option for images to enlarge on mouse over - currently disabled (set to 1x) as functionality is not clean enough to use */
+
 .card img:hover{
-  transform: scale(1.01);
+  transform: scale(1.00);
   filter: blur(10px);
   cursor: pointer;
 }
 
-.hide{
-  display:
-}
+/* Commented out function to remove project headers from site, shifting view to a content stream style */
+
+/* .hide{
+  display: none;
+} */
 
 .biography {
   margin: 30px;
@@ -172,7 +188,6 @@ footer {
 } 
 
 .profile-pic{
-  
 max-width: 25%;
 object-fit: contain;
 float: right;
@@ -198,6 +213,8 @@ padding-bottom: 25px;
   align-items: center;
 } 
 
+/*Animation keyframes for initial page blur, as well as rules for viewport size to adjust flex direction and profile pic size */
+
 @keyframes blur{
   from {filter:blur(10px);}
   to {filter:blur(0px);}
@@ -214,4 +231,3 @@ padding-bottom: 25px;
       max-width: 70%;
   }
 }
-
