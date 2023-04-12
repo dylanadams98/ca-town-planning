@@ -39,6 +39,7 @@ header h4{
   color:var(--dark);
   outline: none;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 h4:hover {
