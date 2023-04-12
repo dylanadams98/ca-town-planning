@@ -16,4 +16,4 @@ The deployed code is accessible here: https://github.com/dylanadams98/personal-p
 
 The deployed page is accessible here: https://dylanadams98.github.io/personal-portfolio-project
 
-! [Alt Text] (/assets/images/Screenshot 2023-04-12 at 22.11.55.png)
+Screenshot 2023-04-12 at 22.11.55.png
