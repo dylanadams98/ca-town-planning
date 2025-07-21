@@ -125,7 +125,8 @@ margin-right: auto;
 .card-text {
   text-align: left;
   color:var(--mid);
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-top: ;
   margin-top: -1px;
 
 }
