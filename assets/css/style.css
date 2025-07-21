@@ -1,9 +1,9 @@
 /* Root styles to ensure easily adjustable and modular site */
 
 :root {
-  --dark: #232323;
-  --light: #d5bf91;
-  --mid: #8F5C38;
+  --dark: #dd5100;
+  --light: #f7efd6;
+  --mid: #22201f;
 }
 
 /* Ensures all jumpto navigation uses a smooth scroll */
@@ -26,10 +26,10 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  animation-name: blur;
+  /*animation-name: blur;
   animation-duration: 3s;
   animation-direction: alternate;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
   background-color: var(--light);
   user-select: none;
 }
@@ -37,32 +37,33 @@ body {
 /* Animated header text using eased transition on letter spacing in place of kerning */
 
 header h4{
-  align-items: center;
+  align-items: left;
   font-size: 100px;
-  text-transform: uppercase;
-  font-family: 'helvetica', serif;
-  letter-spacing: -15.5px;
-  transition: 1000ms ease;
-  margin-bottom: -0.8rem;
+  font-family: helvetica;
+  letter-spacing: -3px;
+  /* transition: 1000ms ease; */
+  margin-bottom: .5rem;
   margin-top: -0.8rem;
-  color:var(--dark);
+  color:var(--mid);
   outline: none;
-  text-align: center;
+  text-align: left;
   flex-wrap: wrap;
+  padding-left: 9%;
 }
 
-h4:hover {
+/*h4:hover {
   letter-spacing: 5px;
-}
+} */
 
 /* Navigation bar that is fixed as a column, and features animated darkened background */
 
 nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   background-color: var(--dark);
-  align:  center;
-  text-align: center;
+  text-align: right;
+  padding-right: 8%;
+
 }
 
 nav a:hover{
@@ -72,13 +73,19 @@ nav a:hover{
 a {
   text-decoration: none;
   color: inherit;
+  
 }
 
 nav a {
   color:var(--light);
-  padding: 14px 20px;
+  padding: 20px ;
   text-decoration: none;
-  text-align: center;
+  align-content: right;
+  text-align: right;
+}
+
+.nav-active {
+  background-color: var(--mid);
 }
 
 main {
@@ -91,67 +98,72 @@ main {
 footer {
   width: 100%;
   bottom: 0;
-  padding: 0px;
+  padding: px;
   text-align: center;
   background: var(--dark);
   color: var(--light);
-  margin-top: auto;
+  margin-bottom: 5px;
 }
 
 .projects {
-  padding-top: 7px;
-  text-decoration: none;
-  flex: 1;
-  background-color:var(light);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  background-color:var(dark);
   color: var(--dark);
+width: 80%;
+margin-left: auto;
+margin-right: auto;
   
 }
 
 .card {
-  flex: 0 0 347px;
-  filter: drop-shadow(0px 0px 0px);
-  justify-content: center;
-  align-items: center;
-  font-size: small;
-  font-weight: 900;
-  /* overflow: hidden; for blur purposes*/
-  letter-spacing: 0px;
-  transition: 340ms ease;
-  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.card-text {
+  text-align: left;
+  color:var(--mid);
+  padding-left: 10px;
+  margin-top: -1px;
+
+}
+
+/*.card-header {
+  display: block;
+  text-align: left;
+  color:var(--mid);
+} */
+
+
+.break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 /* Project examples with animated grayscale transition and text spacing. Alternatively can have unblur transition (Commented out currently) */
 
 .card:hover {
-  letter-spacing: 1px;
+  /*letter-spacing: 1px;*/
 }
 
 .card .cover-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+
   /* z-index: -1; for blur purposes*/
-  filter: grayscale(100%);
+  filter: grayscale(50%);
   transition: filter 0.15s linear; 
 }
 
 .card:hover .cover-image{
   filter: grayscale(0);
+
   
-}
-
-.card header {
-  padding-top: 5px;
-  padding-bottom:9px;
-}
-
-.card p {
-  text-align: center;
-  color:var(--dark);
 }
 
 .card img {
@@ -178,13 +190,17 @@ footer {
   padding: 30px;
   justify-content: center;
   align-items: center;
-  background-color:var(--dark);
+  background-color:var(--mid);
   color:var(--light);
+  width: 80%;
+  margin-left: auto;
+margin-right: auto;
 
 }
 
 .biography p {
-  margin-top: -5px
+  margin-top: -5px;
+  
 } 
 
 .profile-pic{
@@ -223,6 +239,20 @@ padding-bottom: 25px;
 @media screen and (max-width: 768px) {
   main {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+  .card .cover-image {
+    width: 100%;
+  height: 100%;
+  }
+  .card-text{
+    padding-left: 5px;
+  margin-top: 10px;
   }
 }
 
