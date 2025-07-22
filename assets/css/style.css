@@ -1,9 +1,12 @@
 /* Root styles to ensure easily adjustable and modular site */
 
 :root {
-  --dark: #dd5100;
-  --light: #f7efd6;
-  --mid: #22201f;
+  --dark: #464646;
+  --mid: #f7efd6;
+  --darklight: #b7af97;
+  --light: #22201f;
+  --highlight:  #dd5100;
+  --bglight: #d7d8cb;
 }
 
 /* Ensures all jumpto navigation uses a smooth scroll */
@@ -14,14 +17,15 @@ html {
 
 header {
   text-align: center;
-  background: var(--light);
+  background: var(--bglight);
 
 }
 
 /* Blur animation using keyframes included later in CSS */
 
 body {
-  font-family: Helvetica;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -30,7 +34,7 @@ body {
   animation-duration: 3s;
   animation-direction: alternate;
   animation-iteration-count: 1; */
-  background-color: var(--light);
+  background-color: var(--bglight);
   user-select: none;
 }
 
@@ -38,17 +42,18 @@ body {
 
 header h4{
   align-items: left;
-  font-size: 100px;
+  font-size: 40px;
   font-family: helvetica;
   letter-spacing: -3px;
   /* transition: 1000ms ease; */
   margin-bottom: .5rem;
   margin-top: -0.8rem;
-  color:var(--mid);
+  color:var(--light);
   outline: none;
   text-align: left;
   flex-wrap: wrap;
   padding-left: 9%;
+  margin-top: 2px;
 }
 
 /*h4:hover {
@@ -60,14 +65,19 @@ header h4{
 nav {
   display: flex;
   flex-direction: row-reverse;
-  background-color: var(--dark);
+  background-color: var(--darklight);
   text-align: right;
   padding-right: 8%;
+  border-style: ;
+  box-shadow: inset 0 5px #f8a100;
+  font-weight: 500;
+  
 
 }
 
 nav a:hover{
-  background-color: var(--mid);
+  background-color: var(--highlight);
+  
 }
 
 a {
@@ -78,14 +88,14 @@ a {
 
 nav a {
   color:var(--light);
-  padding: 20px ;
+  padding: 8px ;
   text-decoration: none;
   align-content: right;
   text-align: right;
 }
 
 .nav-active {
-  background-color: var(--mid);
+  background-color: var(--highlight);
 }
 
 main {
@@ -100,19 +110,19 @@ footer {
   bottom: 0;
   padding: px;
   text-align: center;
-  background: var(--dark);
+  background: var(--darklight);
   color: var(--light);
   margin-bottom: 5px;
+  box-shadow: inset 0 5px #f8a100;
+  
 }
 
 .projects {
-  padding-top: 20px;
-  padding-bottom: 30px;
-  background-color:var(dark);
-  color: var(--dark);
 width: 80%;
 margin-left: auto;
 margin-right: auto;
+
+
   
 }
 
@@ -120,14 +130,23 @@ margin-right: auto;
   padding: 10px;
   display: flex;
   flex-direction: row;
+  background-color: var(--mid);
+  /* border-radius: 5px; */
+  box-shadow: inset 0  5px #f8a100;
+  margin-bottom: 10px;
+  
+  
 }
 
 .card-text {
   text-align: left;
-  color:var(--mid);
-  padding-left: 20px;
-  padding-top: ;
-  margin-top: -1px;
+  color:var(--light);
+  padding: 7px;
+  margin-top: 1px;
+  margin-bottom: -2px;
+  
+
+  
 
 }
 
@@ -152,9 +171,12 @@ margin-right: auto;
 .card .cover-image {
   display: flex;
   flex-wrap: wrap-reverse;
-  width: 20rem;
-  height: 20rem;
+  flex-direction: column;
+  width: 14rem;
+  height: 14rem;
   object-fit: cover;
+  border-radius: 10px;
+  margin: 10px;
 
   /* z-index: -1; for blur purposes*/
   filter: grayscale(50%);
@@ -187,29 +209,70 @@ margin-right: auto;
 } */
 
 .biography {
-  margin: 30px;
-  padding: 30px;
-  justify-content: center;
-  align-items: center;
+  padding: 0px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   background-color:var(--mid);
   color:var(--light);
+  box-shadow: inset 0 5px #f8a100;
+  margin-bottom: auto;
+}
+
+.biography-text {
+  text-align: left;
+  color:var(--light);
+  padding: 7px;
+  margin-top: 1px;
+  margin-bottom: -2px;
+}
+
+.contact {
+  margin-bottom: auto;
+  padding: 10px;
   width: 80%;
+text-align: center;
+padding: 30px;
+  background-color:var(--mid);
+  color:var(--light);
+  box-shadow: inset 0 5px #f8a100;
+
   margin-left: auto;
 margin-right: auto;
 
+
+}
+
+.contact-form {
+
+  width: 80%;
+text-align: center;
+padding: 30px;
+  background-color:var(--mid);
+  color:var(--light);
+  box-shadow: inset 0 5px #f8a100;
+
+  margin-left: auto;
+margin-right: auto;
+ margin-bottom: auto;
 }
 
 .biography p {
-  margin-top: -5px;
+text-align: left;
+  color:var(--light);
+  padding: 20px;
+  margin-top: 1px;
+  margin-bottom: -2px;
   
 } 
 
 .profile-pic{
-max-width: 25%;
+width: 15rem;
+height: 15rem;
 object-fit: contain;
 float: right;
-padding-left: 25px;
-padding-bottom: 25px;
+padding: 20px;
+border-radius: 10000px;
 }
 
 .links {
@@ -239,22 +302,22 @@ padding-bottom: 25px;
 
 @media screen and (max-width: 768px) {
   main {
-    flex-direction: column;
+
   }
 }
 
 @media screen and (max-width: 768px) {
   .card {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
   .card .cover-image {
-    width: 100%;
-  height: 100%;
+    width: 12rem;
+  height: 12rem;
   }
-  .card-text{
+  /* .card-text{
     padding-left: 5px;
   margin-top: 10px;
-  }
+  } */
 }
 
 @media screen and (max-width: 768px) {
